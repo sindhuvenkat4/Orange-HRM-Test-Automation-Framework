@@ -1,0 +1,4 @@
+
+
+class TestDataHolder:
+    data = {}
