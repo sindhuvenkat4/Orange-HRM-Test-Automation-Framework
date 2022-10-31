@@ -41,7 +41,7 @@ class BaseElement:
         return None
 
     def attribute(self, attr_name):
-        attribute =self.web_element.get_attribute(attr_name)
+        attribute = self.web_element.get_attribute(attr_name)
         return attribute
 
     @property

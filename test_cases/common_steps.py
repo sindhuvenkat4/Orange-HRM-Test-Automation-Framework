@@ -13,6 +13,7 @@ from page_objects.verify_user import VerifyUser
 from utilities.test_data_holder import TestDataHolder
 import time
 import random
+from pathlib import Path
 
 
 class Configuration:
@@ -44,7 +45,7 @@ def employee_creation(setup, first_name, last_name):
     employee_creation.first_name().input_text(first_name)
     employee_creation.last_name().input_text(last_name)
     employee_creation.employee_id().input_text(random.randint(100000, 999999))
-    employee_creation.profile_picture().send_keys("D:\\Code\\orange_hrm_user_creation\\test_data\\images.jpg")
+    employee_creation.profile_picture().send_keys(str(Path("../test_data/images.jpg").resolve().absolute()))
     employee_creation.save().click()
     wait = WebDriverWait(setup, 3)
     wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, '.oxd-toast--success')))

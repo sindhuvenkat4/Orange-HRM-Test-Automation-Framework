@@ -41,7 +41,7 @@ class AddNewUser(BasePage):
         ).find_elements()
 
         for option in list:
-            if (select_option == option.text):
+            if select_option == option.text:
                 return option
 
     def status(self):
